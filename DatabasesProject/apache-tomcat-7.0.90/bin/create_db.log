@@ -1,0 +1,1544 @@
+
+-------
+31/42/2018 12:42:03
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/42/2018 12:42:03
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/42/2018 12:42:04
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/47/2018 12:47:00
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/47/2018 12:47:01
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/47/2018 12:47:01
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:33
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:33
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/50/2018 13:50:34
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/16/2018 14:16:44
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/45/2018 14:45:10
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/17/2018 15:17:39
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/21/2018 15:21:56
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/16/2018 16:16:09
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+31/29/2018 18:29:13
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+01/25/2018 12:25:46
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+
+
+-------
+01/49/2018 14:49:52
+-------
+
+DROP DATABASE IF EXISTS sampledb 
+CREATE DATABASE IF NOT EXISTS sampledb 
+USE sampledb 
+CREATE TABLE IF NOT EXISTS paper(
+	paperid INTEGER,
+	title VARCHAR(50),
+	abstract VARCHAR(250),
+	pdf VARCHAR(100),
+	PRIMARY KEY (paperid)
+) 
+CREATE TABLE IF NOT EXISTS author(
+	email VARCHAR(100),
+	name VARCHAR(50),
+	affiliation VARCHAR(100),
+	PRIMARY KEY (email)
+) 
+CREATE TABLE IF NOT EXISTS written(
+	paperid INTEGER,
+	email VARCHAR(100),
+	significance INTEGER,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES author(email)
+) 
+CREATE TABLE IF NOT EXISTS pcmember(
+  memberid INTEGER NOT NULL AUTO_INCREMENT
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (memberid)
+) 
+CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	memberid INTEGER NOT NULL,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (memberid) REFERENCES pcmember(memberid)
+) 
+CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END 
+/*CREATE ASSERTION 3pc
+CHECK NOT EXISTS(
+	SELECT * FROM paper P
+	WHERE 3 <>(
+		SELECT COUNT (*)
+		FROM review R
+		WHERE R.paperid = P.paperid
+	)
+)*/
+/*CREATE ASSERTION max5papers
+CHECK NOT NOT EXISTS(
+	SELECT * FROM pcmember P
+	WHERE 5 < (
+		SELECT *
+		FROM review R
+		WHERE R.email = P.email
+	)
+)*/
+

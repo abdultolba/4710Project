@@ -1,0 +1,26 @@
+#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 50px; */
+    overflow: hidden;
+    background: #0093FF;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid black;
+    outline-style: double;
+    outline-color: black;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+#content {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: #BAF1FF;
+    overflow: auto;
+    text-align: center;
+    vertical-align: center;
+}

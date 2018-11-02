@@ -1,0 +1,227 @@
+
+-------
+31/42/2018 12:42:03
+-------
+
+Error executing 'CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) ' (line 33): Incorrect table definition; there can be only one auto column and it must be defined as a key
+Error executing 'CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) ' (line 44): Cannot add foreign key constraint
+Error executing 'CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END ' (line 61): Table 'sampledb.review' doesn't exist
+
+-------
+31/42/2018 12:42:03
+-------
+
+Error executing 'CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) ' (line 33): Incorrect table definition; there can be only one auto column and it must be defined as a key
+Error executing 'CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) ' (line 44): Cannot add foreign key constraint
+Error executing 'CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END ' (line 61): Table 'sampledb.review' doesn't exist
+
+-------
+31/42/2018 12:42:04
+-------
+
+Error executing 'CREATE TABLE IF NOT EXISTS pcmember(
+	memberid INTEGER AUTO_INCREMENT,
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (email)
+) ' (line 33): Incorrect table definition; there can be only one auto column and it must be defined as a key
+Error executing 'CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (email) REFERENCES pcmember(email)
+) ' (line 44): Cannot add foreign key constraint
+Error executing 'CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END ' (line 61): Table 'sampledb.review' doesn't exist
+
+-------
+31/47/2018 12:47:00
+-------
+
+
+-------
+31/47/2018 12:47:01
+-------
+
+
+-------
+31/47/2018 12:47:01
+-------
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+
+-------
+31/50/2018 13:50:11
+-------
+
+
+-------
+31/50/2018 13:50:33
+-------
+
+
+-------
+31/50/2018 13:50:33
+-------
+
+
+-------
+31/50/2018 13:50:34
+-------
+
+
+-------
+31/16/2018 14:16:44
+-------
+
+
+-------
+31/45/2018 14:45:10
+-------
+
+
+-------
+31/17/2018 15:17:39
+-------
+
+
+-------
+31/21/2018 15:21:56
+-------
+
+
+-------
+31/16/2018 16:16:09
+-------
+
+
+-------
+31/29/2018 18:29:13
+-------
+
+
+-------
+01/25/2018 12:25:46
+-------
+
+
+-------
+01/49/2018 14:49:52
+-------
+
+Error executing 'CREATE TABLE IF NOT EXISTS pcmember(
+  memberid INTEGER NOT NULL AUTO_INCREMENT
+	email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (memberid)
+) ' (line 33): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'email VARCHAR(100),
+	name VARCHAR(20),
+	PRIMARY KEY (memberid)
+)' at line 3
+Error executing 'CREATE TABLE IF NOT EXISTS review(
+	reportid INTEGER,
+	sdate DATE,
+	comm VARCHAR(250),
+	recommendation CHAR(1),
+	paperid INTEGER NOT NULL UNIQUE,
+	memberid INTEGER NOT NULL,
+	FOREIGN KEY (paperid) REFERENCES paper(paperid),
+	FOREIGN KEY (memberid) REFERENCES pcmember(memberid)
+) ' (line 44): Cannot add foreign key constraint
+Error executing 'CREATE TRIGGER max5papers
+	BEFORE INSERT ON review
+	FOR EACH ROW
+BEGIN
+	IF new.email IN (
+    SELECT * FROM pcmember P
+    WHERE 5 = (
+		SELECT COUNT(*)
+        FROM review R
+        WHERE R.email = P.email
+        )
+	) THEN
+		SIGNAL SQLSTATE'45000';
+	END IF;
+END ' (line 61): Table 'sampledb.review' doesn't exist
