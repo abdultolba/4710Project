@@ -20,7 +20,7 @@
             <%@ page import="java.sql.*" %>
             <p>Update, Delete, Add PC members: </p>
 
-            <table border="2">
+            <table align="center" border="2">
                 <tr>
                     <td>Member ID</td>
                     <td>Email</td>

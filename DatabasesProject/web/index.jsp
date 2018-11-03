@@ -95,6 +95,14 @@
               <input type="submit" name="pcMember" value="Insert/Delete/Update a PC Member"/>
           </form>
 
+          <br>
+
+          <form action="${pageContext.request.contextPath}/updateReview" method="post">
+              <input type="submit" name="review" value="Insert/Delete/Update a Review Report"/>
+          </form>
+
+          <br>
+
       </content>
   </body>
 </html>
