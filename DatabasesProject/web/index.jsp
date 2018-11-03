@@ -18,16 +18,23 @@
 
       <content id="content">
           <h2>Menu</h2>
+
+          <!-- This section prompts the user to first initialize the database
+               before they continue to perform any other requests.             -->
           <form action="${pageContext.request.contextPath}/initDB" method="post">
               <input type="submit" name="initDB" value="Initialize Database" />
           </form>
           <p>Before selecting any of the remaining options, you must initialize the database using the button above.</p>
 
+          <!-- This section prompts the user to assign
+               up to 3 reviewers to a paper. -->
           <form action="${pageContext.request.contextPath}/Assign" method="post">
               <%@ page import="java.sql.*" %>
               <p>After initializing DB, select Paper ID and up to 3 Reviewers (using CTRL or CMD) to assign to it: </p>
               <p>*Note: Assignment will fail if the pcmember already has 5 reviews assigned to them or the paper already has 3 reviewers.</p>
-              <SELECT name="Assign">
+
+              <!-- This select statement prompts the user for the paperid. -->
+              <select name="Assign">
                   <%
                       try {
                           Class.forName("com.mysql.jdbc.Driver");
@@ -46,11 +53,10 @@
                       System.err.println(e.getMessage());
                   }
                   %>
-              </SELECT>
+              </select>
 
-
-
-              <SELECT multiple name="Assign2">
+              <!-- This select statement prompts the user to choose three reviewers by their email. -->
+              <select multiple name="Assign2">
                   <%
                       try {
                           Class.forName("com.mysql.jdbc.Driver");
@@ -62,7 +68,7 @@
 
 
                           while ( rs.next() ) { %>
-                  <Option> <%=rs.getString("email") %></Option>
+                  <option> <%=rs.getString("email") %></option>
                   <%   }
                       conn.close();
                   } catch (Exception e) {
@@ -70,18 +76,21 @@
                       System.err.println(e.getMessage());
                   }
                   %>
-              </SELECT>
+              </select>
               <input type="submit" name="Assign2" value="Assign"/>
           </form>
 
           <br>
 
+          <!-- This section prompts the user to insert,
+               delete, or update an exiting paper. -->
           <form action="${pageContext.request.contextPath}/updatePaper" method="post">
               <input type="submit" name="paper" value="Insert/Delete/Update a Paper"/>
           </form>
 
           <br>
-
+          <!-- This section prompts the user to insert,
+               delete, or update an exiting PC member. -->
           <form action="${pageContext.request.contextPath}/updatePCMember" method="post">
               <input type="submit" name="pcMember" value="Insert/Delete/Update a PC Member"/>
           </form>
