@@ -24,3 +24,12 @@
     text-align: center;
     vertical-align: center;
 }
+
+
+#afterInit{
+    display: none;
+}
+
+#afterInit:target {
+    display: block;
+}

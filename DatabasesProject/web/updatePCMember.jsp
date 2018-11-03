@@ -51,6 +51,8 @@
                     }
                 %>
             </table>
+        <br>
+
             <form action="${pageContext.request.contextPath}/updatePCMember" method="post">
                 <tr>
                     <td><input type="text" name="emailX" placeholder="Email"></td>
@@ -68,7 +70,7 @@
                 %>
             </form>
 
-            <form action="${pageContext.request.contextPath}/index.jsp">
+            <form action="${pageContext.request.contextPath}/index.jsp#afterInit">
                 <input type="submit" value="Return to Homepage">
             </form>
     </content>

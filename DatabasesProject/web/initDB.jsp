@@ -19,7 +19,7 @@
     <content id="content">
         <h2 style="color:black;">${message}</h2>
         <p>Result: ${result}</p>
-        <form action="${pageContext.request.contextPath}/index.jsp">
+        <form action="${pageContext.request.contextPath}/index.jsp#afterInit">
             <input type="submit" value="Return to Homepage">
         </form>
     </content>
