@@ -92,7 +92,13 @@ public class Init {
      */
     public int initPaper(){
         String tablename = "paper";
-        String createStatement = "CREATE TABLE IF NOT EXISTS paper(paperid INTEGER AUTO_INCREMENT, title VARCHAR(50), abstract VARCHAR(250), pdf VARCHAR(100), PRIMARY KEY (paperid));";
+        String createStatement = "CREATE TABLE IF NOT EXISTS paper(\n" +
+                "\tpaperid INTEGER AUTO_INCREMENT, \n" +
+                "\ttitle VARCHAR(50), \n" +
+                "\tabstract VARCHAR(250), \n" +
+                "\tpdf VARCHAR(100), \n" +
+                "\tPRIMARY KEY (paperid)\n" +
+                ");";
         //create table
         createTable(createStatement);
         //table paper has FOUR attributes
@@ -107,7 +113,11 @@ public class Init {
                 System.out.print("i="+i+"\n");
                 System.out.print(paper[i][0]);
                 try{
-                    String sql = "INSERT INTO paper VALUES("+paper[i][0]+", '"+paper[i][1]+"', '"+paper[i][2]+"', '"+paper[i][3]+"');";
+                    String sql = "INSERT INTO paper VALUES("
+                            + paper[i][0] + ", '"
+                            + paper[i][1] + "', '"
+                            + paper[i][2] + "', '"
+                            + paper[i][3] + "');";
                     PreparedStatement preparestatement = conn.prepareStatement(sql);
                     preparestatement.executeUpdate();
                 } catch (SQLException e){

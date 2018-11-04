@@ -42,7 +42,7 @@ public class Assign extends HttpServlet {
         }
 
         if (selection2.length - 1 > 3){
-            String result = "Assignment failure! You cannot assign more than 3 reviewers to a paper.";
+            String result = "Error: Assignment failure! You cannot assign more than 3 reviewers to a paper.";
             System.out.print(result);
             request.setAttribute("result", result);
             request.getRequestDispatcher("Assign.jsp").forward(request, response);
@@ -56,7 +56,7 @@ public class Assign extends HttpServlet {
                 request.setAttribute("result", result);
             }
             else{
-                String result = "Assignment failure!";
+                String result = "Error: Assignment failure.";
                 request.setAttribute("result", result);
             }
             request.getRequestDispatcher("Assign.jsp").forward(request, response);

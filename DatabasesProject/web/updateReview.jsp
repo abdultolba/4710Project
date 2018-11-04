@@ -28,7 +28,7 @@
                 <tr>
                     <td>Report ID</td>
                     <td>Start Date</td>
-                    <td>Comm</td>
+                    <td>Comment</td>
                     <td>Recommendation</td>
                     <td>Paper ID</td>
                     <td>Member ID</td>
@@ -49,9 +49,9 @@
                         <td><input type="text" name="sdate" value="<%=rs.getString("sdate") %>"></td>
                         <td><input type="text" name="comm" value="<%=rs.getString("comm") %>"></td>
                         <td><input type="text" name="recommendation" value="<%=rs.getString("recommendation") %>"></td>
-                        <td><input type="text" name="paperid" value="<%=rs.getString("paperid") %>"></td>
+                        <td><input type="text" name="paperid" readonly="readonly" value="<%=rs.getString("paperid") %>"></td>
 
-                        <td><input type="text" name="memberid" value="<%=rs.getString("memberid") %>"></td>
+                        <td><input type="text" name="memberid" readonly="readonly" value="<%=rs.getString("memberid") %>"></td>
                         <td><input type="submit" name="update" value="Update"/>
                             <input type="submit" name="delete" value="Delete"/></td></tr>
 
