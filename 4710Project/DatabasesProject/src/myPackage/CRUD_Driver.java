@@ -6,8 +6,8 @@ public class CRUD_Driver {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	public String dbName = "sampledb";
 	private Connection dataBaseConnection = null;
-	private String userName = "root";
-	private String password = "mj452313";
+	private String userName = "john";
+	private String password = "pass1234";
 	private String dbms = "mysql";
 	private String serverName = "localhost";
 	private String portNumber = "8080";
