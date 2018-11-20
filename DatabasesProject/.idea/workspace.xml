@@ -7,21 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7866e75d-1eee-4e59-a60b-4d04eb1050a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/database.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/Assign.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/Init.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/UpdateDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/UpdateDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/Assign.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/updatePCMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/updatePCMember.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/updatePaper.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/updatePaper.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/Init.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/UpdateDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/UpdateDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myPackage/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/Init.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myPackage/UpdateDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/UpdateDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updatePCMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updatePCMember.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updatePaper.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updatePaper.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updateReview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updateReview.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,41 +90,42 @@
     <session id="-1942683290">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.8" value="6" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="679" />
-          <entry key="java" value="2939" />
-          <entry key="jsp" value="996" />
-          <entry key="txt" value="234" />
+          <entry key="css" value="681" />
+          <entry key="java" value="2951" />
+          <entry key="jsp" value="1005" />
+          <entry key="txt" value="249" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="679" />
-          <entry key="JAVA" value="2939" />
-          <entry key="JSP" value="996" />
-          <entry key="PLAIN_TEXT" value="234" />
+          <entry key="CSS" value="681" />
+          <entry key="JAVA" value="2951" />
+          <entry key="JSP" value="1005" />
+          <entry key="PLAIN_TEXT" value="249" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="java" value="14" />
+          <entry key="java" value="16" />
           <entry key="jsp" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="16" />
           <entry key="JSP" value="14" />
         </counts>
       </usages-collector>
@@ -138,15 +133,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="-1494">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myPackage/updatePaper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="920">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/myPackage/Init.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createConn#0;class#Init#0" />
+                <element signature="method#endConn#0;class#Init#0" />
+                <element signature="method#initAuthor#0;class#Init#0" />
+                <element signature="method#initWritten#0;class#Init#0" />
+                <element signature="method#initpcMember#0;class#Init#0" />
+                <element signature="method#initReview#0;class#Init#0" />
+                <element signature="method#createDatabase#0;class#Init#0" />
+                <element signature="method#dropDatabase#0;class#Init#0" />
+                <element signature="method#createTable#0;class#Init#0" />
+                <element signature="method#assign#0;class#Init#0" />
+                <element signature="method#deletePaper#0;class#Init#0" />
+                <element signature="method#addPaper#0;class#Init#0" />
+                <element signature="method#updatePCMember#0;class#Init#0" />
+                <element signature="method#deletePCMember#0;class#Init#0" />
+                <element signature="method#addPCMember#0;class#Init#0" />
+                <element signature="method#updateReview#0;class#Init#0" />
+                <element signature="method#deleteReview#0;class#Init#0" />
+                <element signature="method#addReview#0;class#Init#0" />
+                <element signature="method#createTrigger#0;class#Init#0" />
+                <element signature="method#createView#0;class#Init#0" />
+                <element signature="method#initDatabase#0;class#Init#0" />
               </folding>
             </state>
           </provider>
@@ -155,8 +193,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="437">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -188,13 +226,14 @@
       <find>localhost</find>
       <find>written_ibfk_2</find>
       <find>test()</find>
-      <find>cookiejar</find>
       <find>pass1234</find>
+      <find>cookiejar</find>
+      <find>create  view</find>
     </findStrings>
     <replaceStrings>
       <replace />
-      <replace>pass1234</replace>
       <replace>cookiejar</replace>
+      <replace>pass1234</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -224,10 +263,10 @@
         <option value="$PROJECT_DIR$/web/Assign.jsp" />
         <option value="$PROJECT_DIR$/web/updateReview.jsp" />
         <option value="$PROJECT_DIR$/src/myPackage/Assign.java" />
-        <option value="$PROJECT_DIR$/src/myPackage/Init.java" />
         <option value="$PROJECT_DIR$/web/style.css" />
         <option value="$PROJECT_DIR$/web/styles.css" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/myPackage/Init.java" />
       </list>
     </option>
   </component>
@@ -245,8 +284,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="730" />
-    <option name="width" value="710" />
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -256,6 +294,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,19 +310,24 @@
             <path>
               <item name="DatabasesProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="DatabasesProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myPackage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DatabasesProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DatabasesProject" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541537814804" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541711748594" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -408,7 +452,11 @@
       <workItem from="1541343886129" duration="2642000" />
       <workItem from="1541361823786" duration="1305000" />
       <workItem from="1541363379108" duration="1851000" />
-      <workItem from="1541533074908" duration="3530000" />
+      <workItem from="1541533074908" duration="4271000" />
+      <workItem from="1541622379803" duration="2374000" />
+      <workItem from="1542322124482" duration="284000" />
+      <workItem from="1542322443856" duration="286000" />
+      <workItem from="1542483037336" duration="2901000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing git">
       <created>1541275894784</created>
@@ -445,11 +493,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541363961827</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ignore this...">
+      <created>1541537871056</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541537871057</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45541000" />
+    <option name="totallyTimeSpent" value="52127000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,17 +519,17 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7087912" visible="true" weight="0.12374821" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7032967" visible="true" weight="0.12947068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.2912088" side_tool="true" visible="true" weight="0.12374821" />
+      <window_info id="Web" order="7" sideWeight="0.2967033" side_tool="true" visible="true" weight="0.12947068" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32923833" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923833" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -485,7 +540,7 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32899868" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.32923833" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -508,7 +563,8 @@
     <MESSAGE value="Added some commentation for understanding" />
     <MESSAGE value="Added functionality/page for inserting, updating, or deleting a review report. Also fixed comments." />
     <MESSAGE value="Options only appear after initializing the database now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Options only appear after initializing the database now." />
+    <MESSAGE value="Ignore this..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignore this..." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/myPackage/pom.xml">
@@ -629,35 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPackage/Init.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding>
-            <element signature="method#initAuthor#0;class#Init#0" />
-            <element signature="method#initWritten#0;class#Init#0" />
-            <element signature="method#initpcMember#0;class#Init#0" />
-            <element signature="method#initReview#0;class#Init#0" />
-            <element signature="method#createDatabase#0;class#Init#0" />
-            <element signature="method#dropDatabase#0;class#Init#0" />
-            <element signature="method#createTable#0;class#Init#0" />
-            <element signature="method#assign#0;class#Init#0" />
-            <element signature="method#updatePaper#0;class#Init#0" />
-            <element signature="method#deletePaper#0;class#Init#0" />
-            <element signature="method#addPaper#0;class#Init#0" />
-            <element signature="method#updatePCMember#0;class#Init#0" />
-            <element signature="method#deletePCMember#0;class#Init#0" />
-            <element signature="method#addPCMember#0;class#Init#0" />
-            <element signature="method#updateReview#0;class#Init#0" />
-            <element signature="method#deleteReview#0;class#Init#0" />
-            <element signature="method#addReview#0;class#Init#0" />
-            <element signature="method#createTrigger#0;class#Init#0" />
-            <element signature="method#createView#0;class#Init#0" />
-            <element signature="method#initDatabase#0;class#Init#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/UpdateDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1908">
@@ -675,9 +702,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1494">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/updatePaper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="920">
           <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -685,21 +729,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/styles.css">
+    <entry file="file://$PROJECT_DIR$/src/myPackage/Init.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        <state relative-caret-position="382">
+          <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
           <folding>
-            <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#createConn#0;class#Init#0" />
+            <element signature="method#endConn#0;class#Init#0" />
+            <element signature="method#initAuthor#0;class#Init#0" />
+            <element signature="method#initWritten#0;class#Init#0" />
+            <element signature="method#initpcMember#0;class#Init#0" />
+            <element signature="method#initReview#0;class#Init#0" />
+            <element signature="method#createDatabase#0;class#Init#0" />
+            <element signature="method#dropDatabase#0;class#Init#0" />
+            <element signature="method#createTable#0;class#Init#0" />
+            <element signature="method#assign#0;class#Init#0" />
+            <element signature="method#deletePaper#0;class#Init#0" />
+            <element signature="method#addPaper#0;class#Init#0" />
+            <element signature="method#updatePCMember#0;class#Init#0" />
+            <element signature="method#deletePCMember#0;class#Init#0" />
+            <element signature="method#addPCMember#0;class#Init#0" />
+            <element signature="method#updateReview#0;class#Init#0" />
+            <element signature="method#deleteReview#0;class#Init#0" />
+            <element signature="method#addReview#0;class#Init#0" />
+            <element signature="method#createTrigger#0;class#Init#0" />
+            <element signature="method#createView#0;class#Init#0" />
+            <element signature="method#initDatabase#0;class#Init#0" />
           </folding>
         </state>
       </provider>

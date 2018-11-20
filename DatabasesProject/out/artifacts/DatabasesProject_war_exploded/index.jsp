@@ -13,10 +13,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
       <!-- jQuery library -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
@@ -50,7 +48,7 @@
                           try {
                               Class.forName("com.mysql.jdbc.Driver");
                               String url = "jdbc:mysql://localhost:3306/sampledb";
-                              Connection conn = DriverManager.getConnection(url,"root","cookiejar");
+                              Connection conn = DriverManager.getConnection(url,"root","pass1234");
                               Statement stmt = conn.createStatement();
                               ResultSet rs;
                               rs = stmt.executeQuery("SELECT paperid FROM paper");
@@ -72,7 +70,7 @@
                           try {
                               Class.forName("com.mysql.jdbc.Driver");
                               String url = "jdbc:mysql://localhost:3306/sampledb";
-                              Connection conn = DriverManager.getConnection(url,"root","cookiejar");
+                              Connection conn = DriverManager.getConnection(url,"root","pass1234");
                               Statement stmt = conn.createStatement();
                               ResultSet rs;
                               rs = stmt.executeQuery("SELECT email FROM pcmember");

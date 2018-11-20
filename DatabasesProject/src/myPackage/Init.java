@@ -8,20 +8,17 @@ import java.sql.SQLException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
-
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
 public class Init {
-    // Private class variable for connection to MySQL database
-    private Connection conn;
+    private Connection conn;            // Private class variable for connection to MySQL database
 
     /**
      * This method attempts to create an active MySQL connection.
-     * @param dbName - the database name (ex: 'sampledb')
-     * @return - Returns 1 if the connection was created, 0 if it could not be established.
+     * @param dbName The database name (ex: 'sampledb')
+     * @return 1 if the connection was created, 0 if it could not be established.
      */
     public int createConn(String dbName){
         try{
@@ -36,8 +33,7 @@ public class Init {
 
     /**
      * This method attempts to terminate the current MySQL connection
-     * @return - Returns 1 if the connection was ended,
-     *           0 if it could not end the connection.
+     * @return 1 if the connection was ended, 0 if it could not end the connection.
      */
     public int endConn(){
         try{
@@ -57,10 +53,9 @@ public class Init {
      * @return - A multi-dimensional array containing the values which were contained in the CSV file
      */
     public String[][] getFileContent(String tablename, int numAttributes){
-        System.out.print("Working on table "+tablename+"in getFileContent.\n");
+        System.out.print("Working on table " + tablename + " in getFileContent.\n");
         try{
             int size = 10;
-
             if (tablename == "paper") size = 13;
             else if (tablename == "author") size = 12;
             else if (tablename == "written") size = 14;
@@ -103,7 +98,7 @@ public class Init {
         createTable(createStatement);
         //table paper has FOUR attributes
         String[][] paper = getFileContent(tablename, 4);
-        System.out.print("PAPER: "+paper);
+        System.out.print("PAPER: " + paper);
         if(paper == null){
             System.out.print("Error: Paper array empty\n");
             return 0;
