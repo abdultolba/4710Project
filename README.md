@@ -1,7 +1,7 @@
-#************************************************************************************************************************
-#                            CSC 4710 - Introduction to Database Management Systems
-#                                            Course Project - Part 1
-#************************************************************************************************************************
+************************************************************************************************************************
+                            CSC 4710 - Introduction to Database Management Systems
+                                            Course Project - Part 1
+************************************************************************************************************************
 
 
 Consider the design of the following database system for managing a particular conference: a collection of papers are
@@ -13,7 +13,7 @@ members. Each review report consists of a report ID, a description of review com
 (accept, reject), and the date the review report is submitted. A PC member can submit at most one review report for the
 paper that is assigned to him/her.
 
-#Part 1:
+Part 1:
 
 Design  the  database  using  the  ER  approach.  Then  using  Java  and  SQL, implement the following functionality:
 1.  Implement a button called “Initialize Database”. When a user clicks it, all necessary tables will  be  created  (or  recreated)
