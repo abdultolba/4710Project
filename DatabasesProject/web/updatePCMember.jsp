@@ -32,7 +32,7 @@
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
                         String url = "jdbc:mysql://localhost:3306/sampledb";
-                        Connection conn = DriverManager.getConnection(url,"root","pass1234");
+                        Connection conn = DriverManager.getConnection(url,"john","pass1234");
                         Statement stmt = conn.createStatement();
                         ResultSet rs;
                         rs = stmt.executeQuery("SELECT * FROM pcmember");

@@ -48,7 +48,7 @@
                           try {
                               Class.forName("com.mysql.jdbc.Driver");
                               String url = "jdbc:mysql://localhost:3306/sampledb";
-                              Connection conn = DriverManager.getConnection(url,"root","pass1234");
+                              Connection conn = DriverManager.getConnection(url,"root","cookiejar");
                               Statement stmt = conn.createStatement();
                               ResultSet rs;
                               rs = stmt.executeQuery("SELECT paperid FROM paper");
@@ -70,7 +70,7 @@
                           try {
                               Class.forName("com.mysql.jdbc.Driver");
                               String url = "jdbc:mysql://localhost:3306/sampledb";
-                              Connection conn = DriverManager.getConnection(url,"root","pass1234");
+                              Connection conn = DriverManager.getConnection(url,"root","cookiejar");
                               Statement stmt = conn.createStatement();
                               ResultSet rs;
                               rs = stmt.executeQuery("SELECT email FROM pcmember");
