@@ -22,7 +22,7 @@ public class updatePCMember extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request , HttpServletResponse response)
 	 */
-	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) throws ServletException, IOException { }
+	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) { }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request , HttpServletResponse response)
@@ -32,13 +32,13 @@ public class updatePCMember extends HttpServlet {
 		String email = request.getParameter ( "email" );
 		String name = request.getParameter ( "name" );
 
-		if ( !request.getParameter ( "update" ).isEmpty () )
+		if ( ! request.getParameter ( "update" ).isEmpty ( ) )
 			new Init ( ).updatePCMember ( memberid , email , name );
 
-		if ( !request.getParameter ( "delete" ).isEmpty () )
+		if ( ! request.getParameter ( "delete" ).isEmpty ( ) )
 			new Init ( ).deletePCMember ( memberid , email , name );
 
-		if ( !request.getParameter ( "addnew" ).isEmpty () ) {
+		if ( ! request.getParameter ( "addnew" ).isEmpty ( ) ) {
 			String emailX = request.getParameter ( "emailX" );
 			String nameX = request.getParameter ( "nameX" );
 			new Init ( ).addPCMember ( emailX , nameX );

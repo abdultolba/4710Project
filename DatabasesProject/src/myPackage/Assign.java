@@ -23,7 +23,7 @@ public class Assign extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request , HttpServletResponse response)
 	 */
-	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) throws ServletException, IOException { }
+	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) { }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request , HttpServletResponse response)
@@ -38,10 +38,10 @@ public class Assign extends HttpServlet {
 
 		if ( selection2.length >= 4 )
 			executionResult = "Assignment Unsuccessful.\n At most three reviewers can be assigned to one paper.";
-		else if ( selection.isEmpty () )
+		else if ( selection.isEmpty ( ) )
 			executionResult = "Assignment Unsuccessful.\n Assign field is empty.";
 		else
-			executionResult = ( new Init ( ).assign ( selection , selection2 ) ) ? ( "Assignment was Successful") : ( "Assignment Unsuccessful. Unknown Error Occurred" );
+			executionResult = ( new Init ( ).assign ( selection , selection2 ) ) ? ( "Assignment was Successful" ) : ( "Assignment Unsuccessful. Unknown Error Occurred" );
 
 		request.setAttribute ( "result" , executionResult );
 		request.getRequestDispatcher ( "Assign.jsp" ).forward ( request , response );

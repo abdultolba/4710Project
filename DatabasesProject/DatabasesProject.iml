@@ -80,5 +80,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.47-bin1" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
+    <orderEntry type="library" name="DatabasesProject" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

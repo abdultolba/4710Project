@@ -22,21 +22,22 @@ public class updateReview extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request , HttpServletResponse response)
 	 */
-	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) throws ServletException, IOException { }
+	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) { }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request , HttpServletResponse response)
 	 */
 	protected void doPost ( HttpServletRequest request , HttpServletResponse response ) throws ServletException, IOException {
-		if ( !request.getParameter ( "addnew" ).isEmpty () ) {
+		if ( ! request.getParameter ( "addnew" ).isEmpty ( ) ) {
 			String sdateX = request.getParameter ( "sdateX" );
 			String commX = request.getParameter ( "commX" );
 			String recommendationX = request.getParameter ( "recommendationX" );
 			String paperidX = request.getParameter ( "paperidX" );
 			String memberidX = request.getParameter ( "memberidX" );
 
-			new Init ().addReview ( sdateX , commX , recommendationX , paperidX , memberidX );
-		} else {
+			new Init ( ).addReview ( sdateX , commX , recommendationX , paperidX , memberidX );
+		}
+		else {
 			String reportid = request.getParameter ( "reportid" );
 			String sdate = request.getParameter ( "sdate" );
 			String comm = request.getParameter ( "comm" );
@@ -44,11 +45,11 @@ public class updateReview extends HttpServlet {
 			String paperid = request.getParameter ( "paperid" );
 			String memberid = request.getParameter ( "memberid" );
 
-			if ( !request.getParameter ( "update" ).isEmpty () )
-				new Init ().updateReview ( reportid , sdate , comm , recommendation , paperid , memberid );
+			if ( ! request.getParameter ( "update" ).isEmpty ( ) )
+				new Init ( ).updateReview ( reportid , sdate , comm , recommendation , paperid , memberid );
 
-			if ( !request.getParameter ( "delete" ).isEmpty () )
-				new Init ().deleteReview ( reportid , sdate , comm , recommendation , paperid , memberid );
+			if ( ! request.getParameter ( "delete" ).isEmpty ( ) )
+				new Init ( ).deleteReview ( reportid , sdate , comm , recommendation , paperid , memberid );
 		}
 
 		request.getRequestDispatcher ( "updateReview.jsp" ).forward ( request , response );

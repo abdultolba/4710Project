@@ -22,7 +22,7 @@ public class updatePaper extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request , HttpServletResponse response)
 	 */
-	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) throws ServletException, IOException { }
+	protected void doGet ( HttpServletRequest request , HttpServletResponse response ) { }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request , HttpServletResponse response)
@@ -33,13 +33,13 @@ public class updatePaper extends HttpServlet {
 		String abstract1 = request.getParameter ( "abstract" );
 		String pdf = request.getParameter ( "pdf" );
 
-		if ( !request.getParameter ( "update" ).isEmpty () )
+		if ( ! request.getParameter ( "update" ).isEmpty ( ) )
 			new Init ( ).updatePaper ( paperid , title , abstract1 , pdf );
 
-		if ( !request.getParameter ( "delete" ).isEmpty () )
+		if ( ! request.getParameter ( "delete" ).isEmpty ( ) )
 			new Init ( ).deletePaper ( paperid , title , abstract1 , pdf );
 
-		if ( !request.getParameter ( "addnew" ).isEmpty () ) {
+		if ( ! request.getParameter ( "addnew" ).isEmpty ( ) ) {
 			String titleX = request.getParameter ( "titleX" );
 			String abstract1X = request.getParameter ( "abstractX" );
 			String pdfX = request.getParameter ( "pdfX" );

@@ -12,17 +12,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <banner id="banner">
-        <h1>CSC 4710 Project</h1>
-    </banner>
+<banner id="banner">
+    <h1>CSC 4710 Project</h1>
+</banner>
 
-    <content id="content">
-        <h2 style="color:black;">${message}</h2>
-        <p>Result: ${result}</p>
-        <form action="${pageContext.request.contextPath}/index.jsp#afterInit">
-            <input type="submit" value="Return to Homepage">
-        </form>
-    </content>
+<content id="content">
+    <h2 style="color:black;">${message}</h2>
+    <p>Result: ${result}</p>
+    <form action="${pageContext.request.contextPath}/index.jsp#afterInit">
+        <input type="submit" value="Return to Homepage">
+    </form>
+</content>
 
 </body>
 </html>

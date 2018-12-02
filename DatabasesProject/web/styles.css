@@ -1,10 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-
-body{
+body {
     background: url(database.jpg) no-repeat center center;
     background-size: cover;
     display: flex;
@@ -12,14 +11,14 @@ body{
     justify-content: center;
 }
 
-#cont{
+#cont {
     width: 600px;
     margin: 0 auto;
     text-align: center;
 }
 
-.btn{
-    background: linear-gradient(45deg, rgba(56,49,247,0.6) 0%,rgba(41,137,216,0.45) 50%,rgba(47,239,249,0.31) 100%);
+.btn {
+    background: linear-gradient(45deg, rgba(56, 49, 247, 0.6) 0%, rgba(41, 137, 216, 0.45) 50%, rgba(47, 239, 249, 0.31) 100%);
     border-radius: 4px;
     padding: 20px 48px;
     color: #ffffff;

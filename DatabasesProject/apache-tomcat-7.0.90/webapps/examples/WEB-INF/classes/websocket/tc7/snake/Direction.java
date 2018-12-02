@@ -21,5 +21,5 @@ package websocket.tc7.snake;
  */
 @Deprecated
 public enum Direction {
-    NONE, NORTH, SOUTH, EAST, WEST
+	NONE, NORTH, SOUTH, EAST, WEST
 }
