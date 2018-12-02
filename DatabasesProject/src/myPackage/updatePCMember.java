@@ -41,6 +41,7 @@ public class updatePCMember extends HttpServlet {
 		if ( ! request.getParameter ( "addnew" ).isEmpty ( ) ) {
 			String emailX = request.getParameter ( "emailX" );
 			String nameX = request.getParameter ( "nameX" );
+			
 			new Init ( ).addPCMember ( emailX , nameX );
 		}
 
