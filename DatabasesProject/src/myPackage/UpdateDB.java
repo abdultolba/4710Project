@@ -25,6 +25,12 @@ public class UpdateDB {
 		} catch ( SQLException e ) {
 			logger.log ( SEVERE , "Exception Encountered running SQL Statement" , e );
 			e.printStackTrace ( );
+		} finally {
+			try {
+				connection.close ( );
+			} catch ( SQLException exception ) {
+				logger.log ( SEVERE , "SQLException encountered while closing connection to database" , exception );
+			}
 		}
 
 		return queryExecutionResult;
