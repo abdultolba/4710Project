@@ -31,13 +31,14 @@ public class ConnectionFactory {
 		return null;
 	}
 
-	public static int killConnection ( Connection conn ) {
-		try {
-			conn.close ( );
-			return 1;
-		} catch ( SQLException e ) {
-			System.out.print ( "Exception Encountered: " + e + "\n" );
-			return 0;
-		}
-	}
+// just use connetion.close()
+// 	public static int killConnection ( Connection conn ) {
+// 		try {
+// 			conn.close ( );
+// 			return 1;
+// 		} catch ( SQLException e ) {
+// 			System.out.print ( "Exception Encountered: " + e + "\n" );
+// 			return 0;
+// 		}
+// 	}
 }
