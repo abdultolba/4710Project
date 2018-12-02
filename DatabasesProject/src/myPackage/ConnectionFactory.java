@@ -16,7 +16,7 @@ public class ConnectionFactory {
 	private static final String PASS = "testpass";
 	private static final String DBNAME = "sampledb";
 
-	public static Connection getConnection ( ) {
+	public Connection getConnection ( ) {
 		try {
 			Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
 			return DriverManager.getConnection ( URL , USER , PASS );
@@ -31,7 +31,13 @@ public class ConnectionFactory {
 		return null;
 	}
 
-	public static void killConnection ( ) {
-
+	public static int killConnection ( Connection conn ) {
+		try {
+			conn.close ( );
+			return 1;
+		} catch ( SQLException e ) {
+			System.out.print ( "Exception Encountered: " + e + "\n" );
+			return 0;
+		}
 	}
 }

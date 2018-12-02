@@ -8,75 +8,89 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Logger;
 
-import static java.util.logging.Level.SEVERE;
-
 public class Init {
+	enum tableType {
+		AUTHOR ( 12 , 3 ),
+		PAPER ( 13 , 4 ),
+		PCMEMBER ( 14 , 2 ),
+		REVIEW ( 12 , 6 ),
+		WRITTEN ( 14 , 3 );
+
+		private int size;
+		private int attr;
+
+		tableType ( int size , int attr ) {
+			this.size = size;
+			this.attr = attr;
+		}
+
+		public int getSize ( ) { return size; }
+
+		public int getAttr ( ) {
+			return attr;
+		}
+
+		@Override
+		public String toString ( ) { return super.toString ( ).toLowerCase ( ); }
+	}
+
 	private Connection conn;
 	private static final Logger logger = Logger.getLogger ( Init.class.getName ( ) );
 
-	/**
-	 * This method attempts to create an active MySQL connection.
-	 *
-	 * @param dbName The database name (ex: 'sampledb')
-	 *
-	 * @return 1 if the connection was created, 0 if it could not be established.
-	 */
-	public int createConn ( String dbName ) {
-		try {
-			Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
-			conn = DriverManager.getConnection ( "jdbc:mysql://localhost:3306/" + dbName + "?allowMultiQueries=true&user=john&password=pass1234" );
-		} catch ( SQLException e ) {
-			logger.log ( SEVERE , "Connection to " + dbName + " not able to made" , e );
-		} catch ( Exception e ) {
-			logger.log ( SEVERE , "An exception was encountered while making a connection " + dbName , e );
-			return 0;
-		}
-		return 1;
-	}
-
-	/**
-	 * This method attempts to terminate the current MySQL connection
-	 *
-	 * @return 1 if the connection was ended, 0 if it could not end the connection.
-	 */
-	public int endConn ( ) {
-		try {
-			conn.close ( );
-			return 1;
-		} catch ( SQLException e ) {
-			System.out.print ( "Exception Encountered: " + e + "\n" );
-			return 0;
-		}
-	}
-
+//	/**
+//	 * This method attempts to create an active MySQL connection.
+//	 *
+//	 * @param dbName The database name (ex: 'sampledb')
+//	 *
+//	 * @return 1 if the connection was created, 0 if it could not be established.
+//	 */
+//	public int createConn ( String dbName ) {
+//		try {
+//			Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
+//			conn = DriverManager.getConnection ( "jdbc:mysql://localhost:3306/" + dbName + "?allowMultiQueries=true&user=john&password=pass1234" );
+//		} catch ( SQLException e ) {
+//			logger.log ( SEVERE , "Connection to " + dbName + " not able to made" , e );
+//		} catch ( Exception e ) {
+//			logger.log ( SEVERE , "An exception was encountered while making a connection " + dbName , e );
+//			return 0;
+//		}
+//		return 1;
+//	}
+//
+//	/**
+//	 * This method attempts to terminate the current MySQL connection
+//	 *
+//	 * @return 1 if the connection was ended, 0 if it could not end the connection.
+//	 */
+//	public int endConn ( ) {
+//		try {
+//			conn.close ();
+//			return 1;
+//		} catch ( SQLException e ) {
+//			System.out.print ( "Exception Encountered: " + e + "\n" );
+//			return 0;
+//		}
+//	}
 	/**
 	 * This method reads comma separated values from a .csv
 	 * file and stores them in a multi-dimensional array
 	 *
-	 * @param tablename     - a string containing the table's name (ex: 'paper')
-	 * @param numAttributes - an integer representing the number of attributes associated with the table.
-	 *
+	 * @param tablename     - a tableType (enum) containing the table's name (ex: 'paper') and csv size
 	 * @return - A multi-dimensional array containing the values which were contained in the CSV file
 	 */
-	public String[][] getFileContent ( String tablename , int numAttributes ) {
-		System.out.print ( "Working on table " + tablename + " in getFileContent.\n" );
-		try {
-			int size = 10;
-			if ( tablename == "paper" ) size = 13;
-			else if ( tablename == "author" ) size = 12;
-			else if ( tablename == "written" ) size = 14;
-			else if ( tablename == "pcmember" ) size = 14;
-			else if ( tablename == "review" ) size = 12;
+	public String[][] getFileContent ( tableType tablename ) {
+		logger.info ( "Working on table " + tablename + " in getFileContent.\n" );
 
-			File myFile = new File ( getClass ( ).getResource ( tablename + ".csv" ).toURI ( ) );
-			String[][] content = new String[ size ][ numAttributes ];
+		try {
+			File myFile = new File ( getClass ( ).getResource ( tablename.toString ( ) + ".csv" ).toURI ( ) );
+			String[][] content = new String[ tablename.getSize ( ) ][ tablename.getAttr ( ) ];
 			String row = "";
 			int i = 0;
 			BufferedReader csv = new BufferedReader ( new FileReader ( myFile ) );
 
-			while ( ( row = csv.readLine ( ) ) != null && i < size ) {
+			while ( ( row = csv.readLine ( ) ) != null && i < tablename.getSize ( ) ) {
 				content[ i ] = row.split ( "," );
-				System.out.print ( content[ i ][ 0 ] + "\n" );
+				logger.info ( content[ i ][ 0 ] + "\n" );
 				i++;
 			}
 			return content;
@@ -93,7 +107,6 @@ public class Init {
 	 * @return - Returns a 1 if the table was initialized, 0 otherwise.
 	 */
 	public int initPaper ( ) {
-		String tablename = "paper";
 		String createStatement = "CREATE TABLE IF NOT EXISTS paper(\n" +
 				                         "\tpaperid INTEGER AUTO_INCREMENT, \n" +
 				                         "\ttitle VARCHAR(50), \n" +
@@ -103,7 +116,7 @@ public class Init {
 				                         ");";
 		//create table
 		createTable ( createStatement );
-		String[][] paper = getFileContent ( tablename , 4 );
+		String[][] paper = getFileContent ( tableType.PAPER );
 
 		if ( paper == null ) {
 			System.out.print ( "Error: Paper array empty\n" );
@@ -111,12 +124,11 @@ public class Init {
 		}
 		else {
 			for ( int i = 0 ; i < paper.length ; i++ ) {
-				String sql = "INSERT INTO paper VALUES("
-						             + paper[ i ][ 0 ] + ", '"
-						             + paper[ i ][ 1 ] + "', '"
-						             + paper[ i ][ 2 ] + "', '"
-						             + paper[ i ][ 3 ] + "');";
-				updateTable ( sql );
+				new UpdateDB ( ).insertPaper (
+						paper[ i ][ 0 ] ,
+						paper[ i ][ 1 ] ,
+						paper[ i ][ 2 ] ,
+						paper[ i ][ 3 ] );
 			}
 			return 1;
 		}
@@ -129,12 +141,11 @@ public class Init {
 	 * @return - Returns a 1 if the table was initialized, 0 otherwise.
 	 */
 	public int initAuthor ( ) {
-		String tablename = "author";
 		String createStatement = "CREATE TABLE IF NOT EXISTS author(email VARCHAR(100), name VARCHAR(50), affiliation VARCHAR(100), PRIMARY KEY (email));";
 
 		createTable ( createStatement );
 
-		String[][] author = getFileContent ( tablename , 3 );
+		String[][] author = getFileContent ( tableType.AUTHOR );
 		if ( author == null ) {
 			System.out.print ( "Error: Author array empty\n" );
 			return 0;
@@ -158,13 +169,11 @@ public class Init {
 	 * @return - Returns a 1 if the table was initialized, 0 otherwise.
 	 */
 	public int initWritten ( ) {
-		endConn ( );
-		createConn ( "sampledb" );
 		String tablename = "written";
 		String createStatement = "CREATE TABLE IF NOT EXISTS written(id INTEGER AUTO_INCREMENT, paperid INTEGER, email VARCHAR(100), significance INTEGER, PRIMARY KEY(id), FOREIGN KEY (paperid) REFERENCES paper(paperid), FOREIGN KEY (email) REFERENCES author(email));";
 		createTable ( createStatement );
 		//table written has THREE attributes
-		String[][] written = getFileContent ( tablename , 3 );
+		String[][] written = getFileContent ( tableType.WRITTEN );
 
 		if ( written == null ) {
 			System.out.print ( "Error: Written array empty\n" );
@@ -190,21 +199,17 @@ public class Init {
 	 * @return - Returns a 1 if the table was initialized, 0 otherwise.
 	 */
 	public int initpcMember ( ) {
-		String tablename = "pcmember";
 		String createStatement = "CREATE TABLE IF NOT EXISTS pcmember(memberid INTEGER NOT NULL AUTO_INCREMENT, email VARCHAR(100), name VARCHAR(20), PRIMARY KEY (memberid));";
 		createTable ( createStatement );
 
-		String[][] pcmember = getFileContent ( tablename , 2 );
+		String[][] pcmember = getFileContent ( tableType.PCMEMBER );
 		if ( pcmember == null ) {
 			System.out.print ( "Error: Pcmember array empty\n" );
 			return 0;
 		}
 		else {
 			for ( int i = 0 ; i < pcmember.length ; i++ ) {
-				String sql = "INSERT INTO pcmember(email, name) VALUES("
-						             + pcmember[ i ][ 1 ] + ", "
-						             + pcmember[ i ][ 0 ] + ");";
-				updateTable ( sql );
+				new UpdateDB ( ).insertPCMember ( pcmember[ i ][ 1 ] , pcmember[ i ][ 0 ] );
 			}
 			return 1;
 		}
@@ -217,14 +222,11 @@ public class Init {
 	 * @return - Returns a 1 if the table was initialized, 0 otherwise.
 	 */
 	public int initReview ( ) {
-		endConn ( );
-		createConn ( "sampledb" );
-		String tablename = "review";
 		String createStatement = "CREATE TABLE IF NOT EXISTS review(reportid INTEGER AUTO_INCREMENT, sdate DATE, comm VARCHAR(250), recommendation CHAR(1), paperid INTEGER NOT NULL, memberid INTEGER NOT NULL, PRIMARY KEY(reportid), FOREIGN KEY (paperid) REFERENCES paper(paperid), FOREIGN KEY (memberid) REFERENCES pcmember(memberid));";
 		System.out.print ( createStatement );
 		System.out.print ( createTable ( createStatement ) );
 
-		String[][] review = getFileContent ( tablename , 6 );
+		String[][] review = getFileContent ( tableType.REVIEW );
 		if ( review == null ) {
 			System.out.print ( "Error: Review array empty\n" );
 			return 0;
@@ -237,9 +239,12 @@ public class Init {
 
 					Date sqlDate = new Date ( date.getTime ( ) );
 
-					String sql = "INSERT INTO review VALUES(" + review[ i ][ 2 ] + ", '" + sqlDate.toString ( ) + "', " + review[ i ][ 4 ] + ", " + review[ i ][ 5 ] + ", " + review[ i ][ 0 ] + ", " + review[ i ][ 1 ] + ");";
-
-					updateTable ( sql );
+					new UpdateDB ( ).insertReview ( review[ i ][ 2 ] ,
+							sqlDate.toString ( ) ,
+							review[ i ][ 4 ] ,
+							review[ i ][ 5 ] ,
+							review[ i ][ 0 ] ,
+							review[ i ][ 1 ] );
 				} catch ( ParseException e ) {
 					System.out.print ( "Encountered exception: " + e + "\n" );
 				}
@@ -257,7 +262,7 @@ public class Init {
 	public int createDatabase ( ) {
 		try {
 			String sql = "CREATE DATABASE IF NOT EXISTS sampledb; USE sampledb;";
-			PreparedStatement preparestatement = conn.prepareStatement ( sql );
+			PreparedStatement preparestatement = new ConnectionFactory ( ).getConnection ( ).prepareStatement ( sql );
 			preparestatement.executeUpdate ( );
 			return 1;
 		} catch ( SQLException e ) {
@@ -275,7 +280,7 @@ public class Init {
 	public int dropDatabase ( ) {
 		try {
 			String sql = "DROP DATABASE IF EXISTS sampledb";
-			PreparedStatement preparestatement = conn.prepareStatement ( sql );
+			PreparedStatement preparestatement = new ConnectionFactory ( ).getConnection ( ).prepareStatement ( sql );
 			preparestatement.executeUpdate ( );
 			return 1;
 		} catch ( SQLException e ) {
@@ -294,8 +299,8 @@ public class Init {
 	 */
 	public int createTable ( String createStatement ) {
 		try {
-			PreparedStatement preparestatement = conn.prepareStatement ( createStatement );
-			preparestatement.executeUpdate ( );
+			PreparedStatement preparedStatement = new ConnectionFactory ( ).getConnection ( ).prepareStatement ( createStatement );
+			preparedStatement.executeUpdate ( );
 			return 1;
 		} catch ( Exception e ) {
 			System.out.print ( "Exception Encountered: " + e + "\n" );
@@ -312,7 +317,7 @@ public class Init {
 	 * @return - Returns a 1 if the paper was assigned, 0 if otherwise.
 	 */
 	public Boolean assign ( String paperid , String[] email ) {
-		createConn ( "sampledb" );
+
 
 		if ( email.length - 1 > 3 ) {
 			System.out.print ( "Exception Encountered: assigning over 3 reviewers to paper!" );
@@ -322,7 +327,7 @@ public class Init {
 		String query1 = "SELECT paperid FROM review WHERE paperid = " + paperid + " AND paperid IN (SELECT paperid FROM review GROUP BY paperid HAVING COUNT(*)>=3);";
 
 		try {
-			PreparedStatement preparestatement = conn.prepareStatement ( query1 );
+			PreparedStatement preparestatement = new ConnectionFactory ( ).getConnection ( ).prepareStatement ( query1 );
 			ResultSet r = preparestatement.executeQuery ( );
 			if ( r.next ( ) ) {
 				return false;
@@ -340,7 +345,7 @@ public class Init {
 		for ( int i = 0 ; i < email.length - 1 ; i++ ) {
 			String query = "SELECT memberid FROM pcmember WHERE email = '" + email[ i ] + "' AND memberid NOT IN (SELECT memberid FROM review GROUP BY memberid HAVING COUNT(*) = 5);";
 			try {
-				PreparedStatement preparestatement = conn.prepareStatement ( query );
+				PreparedStatement preparestatement = new ConnectionFactory ( ).getConnection ( ).prepareStatement ( query );
 				ResultSet r = preparestatement.executeQuery ( );
 				if ( r.next ( ) == false ) {
 					memberid[ i ] = null;
@@ -361,15 +366,7 @@ public class Init {
 			if ( memberid[ i ] != null ) {
 				String sql = "INSERT INTO review (paperid,memberid) VALUES (" + paperid + ", " + memberid[ i ] + ");";
 				System.out.print ( sql + "\n" );
-
-				try {
-					PreparedStatement preparestatement = conn.prepareStatement ( sql );
-					preparestatement.executeUpdate ( );
-				} catch ( SQLException e ) {
-					System.out.print ( "Exception Encountered (2): " + e + "\n" );
-				} catch ( Exception e ) {
-					System.out.print ( "Exception Encountered: " + e + "\n" );
-				}
+				updateTable ( sql );
 			}
 		}
 
@@ -387,7 +384,7 @@ public class Init {
 	 * @return - Returns a 1 if the table 'paper' was updated, 0 otherwise.
 	 */
 	public int updatePaper ( String paperid , String title , String abstract1 , String pdf ) {
-		createConn ( "sampledb" );
+
 		String sql = "UPDATE paper SET title='" + title + "', abstract='" + abstract1 + "', pdf='" + pdf + "' WHERE paperid='" + paperid + "';";
 
 		return updateTable ( sql );
@@ -404,7 +401,6 @@ public class Init {
 	 * @return - Returns a 1 if the table 'paper' was deleted, 0 otherwise.
 	 */
 	public int deletePaper ( String paperid , String title , String abstract1 , String pdf ) {
-		createConn ( "sampledb" );
 		String sql2 = "DELETE FROM written WHERE paperid='" + paperid + "';";
 		String sql3 = "DELETE FROM review WHERE paperid='" + paperid + "';";
 		String sql = "DELETE FROM paper WHERE paperid='" + paperid + "';";
@@ -437,7 +433,6 @@ public class Init {
 	 * @return - Returns a 1 if the paper was added, 0 otherwise.
 	 */
 	public int addPaper ( String title , String abstract1 , String pdf ) {
-		createConn ( "sampledb" );
 		String sql = "INSERT INTO paper (title, abstract, pdf) VALUES('" + title + "','" + abstract1 + "','" + pdf + "')";
 
 		return updateTable ( sql );
@@ -453,7 +448,6 @@ public class Init {
 	 * @return - Returns a 1 if the table 'pcmember' was updated, 0 otherwise.
 	 */
 	public int updatePCMember ( String memberid , String email , String name ) {
-		createConn ( "sampledb" );
 		String sql = "UPDATE pcmember SET email='" + email + "', name='" + name + "' WHERE memberid='" + memberid + "';";
 
 		return updateTable ( sql );
@@ -483,7 +477,6 @@ public class Init {
 	 * @return - Returns a 1 if the a pcmember was updated, 0 otherwise.
 	 */
 	public int deletePCMember ( String memberid , String email , String name ) {
-		createConn ( "sampledb" );
 		String sql0 = "DELETE FROM author WHERE email='" + email + "';";
 		String sql2 = "DELETE FROM written WHERE email='" + email + "';";
 		String sql3 = "DELETE FROM review WHERE  memberid= (SELECT memberid FROM pcmember WHERE email = '" + email + "');";
@@ -525,7 +518,6 @@ public class Init {
 	 * @return - Returns a 1 if the a pcmember was added, 0 otherwise.
 	 */
 	public int addPCMember ( String email , String name ) {
-		createConn ( "sampledb" );
 		String sql = "INSERT INTO pcmember (email,name) VALUES('" + email + "','" + name + "')";
 
 		return updateTable ( sql );
@@ -544,7 +536,6 @@ public class Init {
 	 * @return - Returns a 1 if 'review' was successfully updated, 0 otherwise.
 	 */
 	public int updateReview ( String reportid , String sdate , String comm , String recommendation , String paperid , String memberid ) {
-		createConn ( "sampledb" );
 		String sql = "UPDATE review SET sdate='" + sdate + "', comm='" + comm + "', recommendation='" + recommendation + "',  paperid='" + paperid + "', memberid='" + memberid + "' WHERE reportid='" + reportid + "';";
 
 		return updateTable ( sql );
@@ -564,7 +555,6 @@ public class Init {
 	 * @return - Returns a 1 if a review was successfully deleted, 0 otherwise.
 	 */
 	public int deleteReview ( String reportid , String sdate , String comm , String recommendation , String paperid , String memberid ) {
-		createConn ( "sampledb" );
 		String sql = "DELETE FROM review WHERE reportid='" + reportid + "';";
 
 		return updateTable ( sql );
@@ -583,7 +573,6 @@ public class Init {
 	 * @return - Returns a 1 if a review was successfully added, 0 otherwise.
 	 */
 	public int addReview ( String sdate , String comm , String recommendation , String paperid , String memberid ) {
-		createConn ( "sampledb" );
 		String sql = "INSERT INTO review (sdate,comm,recommendation,paperid,memberid) VALUES('" + sdate + "','" + comm + "', '" + recommendation + "', '" + paperid + "', '" + memberid + "')";
 
 		return updateTable ( sql );
@@ -634,11 +623,13 @@ public class Init {
 	 */
 	public Boolean initDatabase ( ) {
 		// Establish a new connection
-		if ( createConn ( "" ) == 0 ) {
-			System.out.print ( "Connection could not be established.\n" );
-			return false;
-		}
-		System.out.print ( "Connection successfully established.\n" );
+//		if ( createConn ( "" ) == 0 ) {
+//			System.out.print ( "Connection could not be established.\n" );
+//			return false;
+//		}
+//		System.out.print ( "Connection successfully established.\n" );
+		// Connect to database
+		conn = new ConnectionFactory ( ).getConnection ( );
 
 		// Try dropping the database, if it exists
 		if ( dropDatabase ( ) == 1 )
@@ -654,14 +645,6 @@ public class Init {
 			return false;
 		}
 		System.out.print ( "Database successfully created.\n" );
-
-		// Connect to database
-		endConn ( );
-		if ( createConn ( "sampledb" ) == 0 ) {
-			System.out.print ( "Connection could not be established.\n" );
-			return false;
-		}
-		System.out.print ( "Successfully connected to sampledb.\n" );
 
 		// Initialize each table individually
 		if ( initPaper ( ) == 0 || initAuthor ( ) == 0 ||

@@ -56,6 +56,14 @@ public class UpdateDB {
 		return runSQLStatement ( "INSERT INTO paper(title, abstract, pdf) VALUES(" + title + ", " + abstr + ", " + pdf + ");" );
 	}
 
+	public Boolean insertPaper ( String paperid , String title , String abstr , String pdf ) {
+		return runSQLStatement ( "INSERT INTO paper VALUES("
+				                         + paperid + ", '"
+				                         + title + "', '"
+				                         + abstr + "', '"
+				                         + pdf + "');" );
+	}
+
 	public Boolean deletePaper ( String paperID ) {
 		return runSQLStatement ( "DELETE FROM paper WHERE paperid = " + paperID );
 	}
@@ -82,6 +90,10 @@ public class UpdateDB {
 
 	public Boolean insertReview ( String sdate , String comm , String recommendation , String paperid , String email ) {
 		return runSQLStatement ( "INSERT INTO review(sdate, comm, recommendation, paperid, email) VALUES(" + sdate + ", " + comm + ", " + recommendation + ", " + paperid + ", " + email + ");" );
+	}
+
+	public Boolean insertReview ( String review , String sdate , String comm , String recommendation , String paperid , String email ) {
+		return runSQLStatement ( "INSERT INTO review VALUES(" + review + "," + sdate + ", " + comm + ", " + recommendation + ", " + paperid + ", " + email + ");" );
 	}
 
 	public Boolean deleteReview ( String reportid ) {
