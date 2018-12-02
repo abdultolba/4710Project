@@ -13,7 +13,8 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 
 public class Init {
-    private Connection conn;            // Private class variable for connection to MySQL database
+	// Private class variable for connection to MySQL database
+	private Connection conn;
 
     /**
      * This method attempts to create an active MySQL connection.
@@ -22,9 +23,9 @@ public class Init {
      */
     public int createConn(String dbName){
         try{
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?allowMultiQueries=true&user=john&password=pass1234");
-        } catch (Exception e){
+	        Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
+	        conn = DriverManager.getConnection ( "jdbc:mysql://localhost:3306/" + dbName + "?allowMultiQueries=true&user=john&password=pass1234" );
+        } catch ( Exception e ) {
             System.out.print("Error occurred: "+e+"\n");
             return 0;
         }
@@ -317,12 +318,12 @@ public class Init {
      * @param email - The pcmember's email address.
      * @return - Returns a 1 if the paper was assigned, 0 if otherwise.
      */
-    public int assign(String paperid, String[] email){
+    public Boolean assign ( String paperid , String[] email ) {
         createConn("sampledb");
         //System.out.print(email.length+"\n");
         if (email.length-1 > 3){
             System.out.print("Exception Encountered: assigning over 3 reviewers to paper!");
-            return 0;
+	        return false;
         }
 
         String query1 = "SELECT paperid FROM review WHERE paperid = "+paperid+" AND paperid IN (SELECT paperid FROM review GROUP BY paperid HAVING COUNT(*)>=3);";
@@ -330,12 +331,12 @@ public class Init {
             PreparedStatement preparestatement = conn.prepareStatement(query1);
             ResultSet r = preparestatement.executeQuery();
             if (r.next()!= false){
-                return 0;
+	            return false;
             }
 
         } catch (Exception e){
             System.out.print("Exception Encountered (0): "+e+"\n");
-            return 0;
+	        return false;
         }
 
 
@@ -355,7 +356,7 @@ public class Init {
 
             } catch (Exception e){
                 System.out.print("Exception Encountered (1): "+e+"\n");
-                return 0;
+	            return false;
             }
 
         }
@@ -377,7 +378,7 @@ public class Init {
             }
         }
 
-        return 1;
+	    return true;
     }
 
     /**
@@ -671,11 +672,11 @@ public class Init {
      * creates a connection, creates a database, and populates all tables.
      * @return
      */
-    public int initDatabase(){
+    public Boolean initDatabase ( ) {
         // Establish a new connection
         if (createConn("") == 0){
             System.out.print("Connection could not be established.\n");
-            return 0;
+	        return false;
         }
         System.out.print("Connection successfully established.\n");
 
@@ -684,13 +685,13 @@ public class Init {
             System.out.print("Database Dropped.\n");
         else{
             System.out.print("Database could not be initially dropped.\n");
-            return 0;
+	        return false;
         }
 
         // Create the database 'sampledb'
         if (createDatabase() == 0){
             System.out.print("Database could not be created.\n");
-            return 0;
+	        return false;
         }
         System.out.print("Database successfully created.\n");
 
@@ -698,7 +699,7 @@ public class Init {
         endConn();
         if (createConn("sampledb") == 0){
             System.out.print("Connection could not be established.\n");
-            return 0;
+	        return false;
         }
         System.out.print("Successfully connected to sampledb.\n");
 
@@ -710,10 +711,10 @@ public class Init {
                 System.out.print("Database Dropped.\n");
                 //add error checking
                 createDatabase();
-                return 0;
+	            return false;
             }
             System.out.print("Database could not be dropped.\n");
-            return 0;
+	        return false;
         }
         System.out.print("Tables succesfully created.\n");
 
@@ -727,7 +728,7 @@ public class Init {
         else
             System.out.print("View successfully created.\n");
 
-        return 1;
+	    return ( true );
     }
 
     /**
