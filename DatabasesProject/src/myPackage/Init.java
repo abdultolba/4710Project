@@ -9,68 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Logger;
 
 public class Init {
-	enum tableType {
-		AUTHOR ( 12 , 3 ),
-		PAPER ( 13 , 4 ),
-		PCMEMBER ( 14 , 2 ),
-		REVIEW ( 12 , 6 ),
-		WRITTEN ( 14 , 3 );
 
-		private int size;
-		private int attr;
-
-		tableType ( int size , int attr ) {
-			this.size = size;
-			this.attr = attr;
-		}
-
-		public int getSize ( ) { return size; }
-
-		public int getAttr ( ) {
-			return attr;
-		}
-
-		@Override
-		public String toString ( ) { return super.toString ( ).toLowerCase ( ); }
-	}
 
 	private Connection conn;
 	private static final Logger logger = Logger.getLogger ( Init.class.getName ( ) );
 
-//	/**
-//	 * This method attempts to create an active MySQL connection.
-//	 *
-//	 * @param dbName The database name (ex: 'sampledb')
-//	 *
-//	 * @return 1 if the connection was created, 0 if it could not be established.
-//	 */
-//	public int createConn ( String dbName ) {
-//		try {
-//			Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
-//			conn = DriverManager.getConnection ( "jdbc:mysql://localhost:3306/" + dbName + "?allowMultiQueries=true&user=john&password=pass1234" );
-//		} catch ( SQLException e ) {
-//			logger.log ( SEVERE , "Connection to " + dbName + " not able to made" , e );
-//		} catch ( Exception e ) {
-//			logger.log ( SEVERE , "An exception was encountered while making a connection " + dbName , e );
-//			return 0;
-//		}
-//		return 1;
-//	}
-//
-//	/**
-//	 * This method attempts to terminate the current MySQL connection
-//	 *
-//	 * @return 1 if the connection was ended, 0 if it could not end the connection.
-//	 */
-//	public int endConn ( ) {
-//		try {
-//			conn.close ();
-//			return 1;
-//		} catch ( SQLException e ) {
-//			System.out.print ( "Exception Encountered: " + e + "\n" );
-//			return 0;
-//		}
-//	}
+
 	/**
 	 * This method reads comma separated values from a .csv
 	 * file and stores them in a multi-dimensional array
@@ -683,4 +627,64 @@ public class Init {
 	public String test ( ) {
 		return "I'm working";
 	}
+	
+		enum tableType {
+		AUTHOR ( 12 , 3 ),
+		PAPER ( 13 , 4 ),
+		PCMEMBER ( 14 , 2 ),
+		REVIEW ( 12 , 6 ),
+		WRITTEN ( 14 , 3 );
+
+		private int size;
+		private int attr;
+
+		tableType ( int size , int attr ) {
+			this.size = size;
+			this.attr = attr;
+		}
+
+		public int getSize ( ) { return size; }
+
+		public int getAttr ( ) {
+			return attr;
+		}
+
+		@Override
+		public String toString ( ) { return super.toString ( ).toLowerCase ( ); }
+	}
 }
+
+//	/**
+//	 * This method attempts to create an active MySQL connection.
+//	 *
+//	 * @param dbName The database name (ex: 'sampledb')
+//	 *
+//	 * @return 1 if the connection was created, 0 if it could not be established.
+//	 */
+//	public int createConn ( String dbName ) {
+//		try {
+//			Class.forName ( "com.mysql.jdbc.Driver" ).getDeclaredConstructor ( ).newInstance ( );
+//			conn = DriverManager.getConnection ( "jdbc:mysql://localhost:3306/" + dbName + "?allowMultiQueries=true&user=john&password=pass1234" );
+//		} catch ( SQLException e ) {
+//			logger.log ( SEVERE , "Connection to " + dbName + " not able to made" , e );
+//		} catch ( Exception e ) {
+//			logger.log ( SEVERE , "An exception was encountered while making a connection " + dbName , e );
+//			return 0;
+//		}
+//		return 1;
+//	}
+//
+//	/**
+//	 * This method attempts to terminate the current MySQL connection
+//	 *
+//	 * @return 1 if the connection was ended, 0 if it could not end the connection.
+//	 */
+//	public int endConn ( ) {
+//		try {
+//			conn.close ();
+//			return 1;
+//		} catch ( SQLException e ) {
+//			System.out.print ( "Exception Encountered: " + e + "\n" );
+//			return 0;
+//		}
+//	}
