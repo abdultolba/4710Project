@@ -88,7 +88,6 @@
                   </select>
                   <input type="submit" name="Assign2" value="Assign"/>
               </form>
-
               <br>
 
               <!-- This section prompts the user to insert,
@@ -96,21 +95,35 @@
               <form action="${pageContext.request.contextPath}/updatePaper" method="post">
                   <input type="submit" name="paper" value="Insert/Delete/Update a Paper"/>
               </form>
-
               <br>
+
               <!-- This section prompts the user to insert,
                    delete, or update an exiting PC member. -->
               <form action="${pageContext.request.contextPath}/updatePCMember" method="post">
                   <input type="submit" name="pcMember" value="Insert/Delete/Update a PC Member"/>
               </form>
-
               <br>
 
               <form action="${pageContext.request.contextPath}/updateReview" method="post">
                   <input type="submit" name="review" value="Insert/Delete/Update a Review Report"/>
               </form>
-
               <br>
+
+              <form action="${pageContext.request.contextPath}/Fotouhi1.jsp" method="post">
+                  <input type="submit" name="Lu1" value="List all papers with Fotouhi as the single author"/>
+              </form>
+              <br>
+
+              <form action="${pageContext.request.contextPath}/Fotouhi2.jsp" method="post">
+                  <input type="submit" name="Lu2" value="List all papers in which Fotouhi is the first author"/>
+              </form>
+              <br>
+
+              <form action="${pageContext.request.contextPath}/FotouhiLu.jsp" method="post">
+                  <input type="submit" name="FotouhiLu" value="List all papers which Fotouhi and Lu have co-authored"/>
+              </form>
+              <br>
+
           </div>
 
       </content>

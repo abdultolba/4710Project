@@ -7,14 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7866e75d-1eee-4e59-a60b-4d04eb1050a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/Fotouhi1.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myPackage/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/Init.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myPackage/UpdateDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/UpdateDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myPackage/updateReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/updateReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/updateReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DatabasesProject_war_exploded/WEB-INF/classes/myPackage/updateReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/updateReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DatabasesProject/myPackage/updateReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myPackage/written.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/myPackage/written.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updatePCMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updatePCMember.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updatePaper.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updatePaper.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/updateReview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/updateReview.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,39 +87,40 @@
     <session id="-1942683290">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="681" />
           <entry key="java" value="2960" />
-          <entry key="jsp" value="1028" />
-          <entry key="txt" value="1662" />
+          <entry key="jsp" value="1137" />
+          <entry key="txt" value="1679" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="681" />
           <entry key="JAVA" value="2960" />
-          <entry key="JSP" value="1028" />
-          <entry key="PLAIN_TEXT" value="1662" />
+          <entry key="JSP" value="1137" />
+          <entry key="PLAIN_TEXT" value="1679" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="csv" value="1" />
+          <entry key="csv" value="6" />
           <entry key="html" value="1" />
           <entry key="iml" value="1" />
           <entry key="java" value="20" />
-          <entry key="jsp" value="16" />
+          <entry key="jsp" value="17" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
           <entry key="xml" value="1" />
@@ -130,11 +129,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="CSV" value="1" />
+          <entry key="CSV" value="6" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="20" />
-          <entry key="JSP" value="16" />
+          <entry key="JSP" value="17" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="1" />
@@ -142,13 +141,16 @@
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DatabasesProject" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2484">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="495">
+              <caret line="121" column="62" lean-forward="true" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="62" />
               <folding>
                 <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
               </folding>
@@ -157,13 +159,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/myPackage/updateReview.java">
+        <entry file="file://$PROJECT_DIR$/web/Fotouhi1.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="183">
+              <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myPackage/written.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -171,35 +179,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/updatePaper.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="230">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="11" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myPackage/author.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="31" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myPackage/review.csv">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-352">
+            <state relative-caret-position="15">
               <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myPackage/review.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -210,8 +210,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -273,8 +273,10 @@
         <option value="$PROJECT_DIR$/src/myPackage/Init.java" />
         <option value="$PROJECT_DIR$/src/myPackage/UpdateDB.java" />
         <option value="$PROJECT_DIR$/README.txt" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/myPackage/updateReview.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/myPackage/written.csv" />
+        <option value="$PROJECT_DIR$/web/Fotouhi1.jsp" />
       </list>
     </option>
   </component>
@@ -301,6 +303,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,20 +315,29 @@
             <path>
               <item name="DatabasesProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="DatabasesProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DatabasesProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DatabasesProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myPackage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DatabasesProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DatabasesProject" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543793571619" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543863461226" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -457,6 +470,7 @@
       <workItem from="1542322124482" duration="284000" />
       <workItem from="1542322443856" duration="286000" />
       <workItem from="1542483037336" duration="5410000" />
+      <workItem from="1543862830888" duration="629000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing git">
       <created>1541275894784</created>
@@ -535,11 +549,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543792924955</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Formatting code">
+      <created>1543793820648</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1543793820648</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55200000" />
+    <option name="totallyTimeSpent" value="56240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -554,20 +575,20 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7032967" visible="true" weight="0.24892704" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5824176" visible="true" weight="0.25250357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" sideWeight="0.41758242" side_tool="true" visible="true" weight="0.25250357" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.2967033" side_tool="true" visible="true" weight="0.2453505" />
+      <window_info id="Web" order="7" sideWeight="0.2967033" side_tool="true" weight="0.2453505" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32923833" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.32923833" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899868" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
@@ -634,7 +655,8 @@
     <MESSAGE value="Ignore this..." />
     <MESSAGE value="Created README.txt file, finalizing part 1 of the project." />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Formatting code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/myPackage/pom.xml">
@@ -648,32 +670,7 @@
     <entry file="file://$PROJECT_DIR$/src/myPackage/ProgramEngine.java" />
     <entry file="file://$PROJECT_DIR$/src/myPackage/searchDB.java" />
     <entry file="file://$PROJECT_DIR$/src/myPackage/DBManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/myPackage/paper.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPackage/pcmember.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/MyServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/myPackage/author.csv">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPackage/review.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/ScriptRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -685,9 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,26 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPackage/updateReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/updatePaper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
@@ -753,30 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1862">
           <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createConn#0;class#Init#0" />
-            <element signature="method#endConn#0;class#Init#0" />
-            <element signature="method#initAuthor#0;class#Init#0" />
-            <element signature="method#initWritten#0;class#Init#0" />
-            <element signature="method#initpcMember#0;class#Init#0" />
-            <element signature="method#initReview#0;class#Init#0" />
-            <element signature="method#createDatabase#0;class#Init#0" />
-            <element signature="method#dropDatabase#0;class#Init#0" />
-            <element signature="method#createTable#0;class#Init#0" />
-            <element signature="method#assign#0;class#Init#0" />
-            <element signature="method#deletePaper#0;class#Init#0" />
-            <element signature="method#addPaper#0;class#Init#0" />
-            <element signature="method#updatePCMember#0;class#Init#0" />
-            <element signature="method#deletePCMember#0;class#Init#0" />
-            <element signature="method#addPCMember#0;class#Init#0" />
-            <element signature="method#updateReview#0;class#Init#0" />
-            <element signature="method#deleteReview#0;class#Init#0" />
-            <element signature="method#addReview#0;class#Init#0" />
-            <element signature="method#createTrigger#0;class#Init#0" />
-            <element signature="method#createView#0;class#Init#0" />
-            <element signature="method#initDatabase#0;class#Init#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -802,13 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/initDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
@@ -819,16 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myPackage/written.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myPackage/UpdateDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1219">
           <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,17 +786,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/updatePaper.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/author.csv">
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/updateReview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/review.csv">
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/updatePaper.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="121" column="62" lean-forward="true" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc;n#jsp:root#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/pcmember.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/paper.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myPackage/written.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Fotouhi1.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
         </state>
       </provider>
     </entry>
