@@ -3,47 +3,62 @@
                                             Course Project - Part 1
 ************************************************************************************************************************
 
+GitHub Link: https://github.com/abdultolba/4710Project
 
-Consider the design of the following database system for managing a particular conference: a collection of papers are
-submitted to the conference, each of which has a unique paper ID, a list of authors (names, affiliations, emails) in the
-order of contribution significance, title, abstract, and a PDF file for its content. The conference has a list of
-program committee (PC) members to review the papers. To ensure review quality, each paper is assigned to 3 PC members
-for review. To avoid overloading, each PC member is assigned with at most 5 papers, assuming that there are enough PC
-members. Each review report consists of a report ID, a description of review comment, a final recommendation
-(accept, reject), and the date the review report is submitted. A PC member can submit at most one review report for the
-paper that is assigned to him/her.
+# Setup
 
-Part 1:
+Step 1) Import project folder/.war file into IntelliJ IDEA Ultimate. <br><br>
+Step 1.1) Ensure JRE version is 1.8. <br><br>
+Step 2) Configure a Tomcat 7 server in Eclipse. <br><br>
+Step 2.1) Ensure Tomcat 7 library is on the projects build path. <br><br>
+Step 3) Ensure your MySQL server is running, and that your username and password are 'john' and 'pass1234', respectively. <br><br>
+Step 4) Build the project and click 'Run TomCat 7.0.xx' which will run the index.jsp file. <br><br>
+Step 5) The TomCat server should start and the project should deploy, opening the application in your default browser. <br>
 
-Design  the  database  using  the  ER  approach.  Then  using  Java  and  SQL, implement the following functionality:
-1.  Implement a button called “Initialize Database”. When a user clicks it, all necessary tables will  be  created  (or  recreated)
-automatically,  with  each  table  be  populated  with  at  least  10 tuples so that each query below will return some
-results. All students should use the database name “sampledb”, username “john”, and password “pass1234”.
-2.  Create the functionality to assign three reviewers to a paper. Your system must be web-based. Some simple GUI
-interfaces are required for each functionality. All functionality must be performed via the interface of your system,
-direct SQL statement execution via any tools (MySQL workbench) is not allowed.
 
-Group Members:
+# Group Members:
 
-1.)
-Name:       Abdulrahman Tolba
-Email:      abdultolba@wayne.edu --or-- ga4237@wayne.edu
-AccessID:   ga4237
+1.) <br>
+Name:       Abdulrahman Tolba <br>
+Email:      abdultolba@wayne.edu --or-- ga4237@wayne.edu <br>
+AccessID:   ga4237 <br>
 Roles:      Project planning, SQL query development & execution, development of Java Servlet Pages and Java classes
-necessary to drive the web application, website design and functionality.
+necessary to drive the web application, website design and functionality. <br>
+<br>
+2.) <br>
+Name:       Anmol Multani <br>
+Email:      multani.anmol@wayne.edu <br>
+Roles:      Worked on the initDB java Servlet that references the Init.java class which initializes the database. <br>
 
-2.)
-Name:       Anmol Multani
-Email:      multani.anmol@wayne.edu
-Roles:      Worked on the initDB java Servlet that references the Init.java class which initializes the database.
+# Using the Database/Web Application
 
-Instructions:
+## Part 1 Requirements: <br>
 
-This project was built using IntelliJ IDEA Ultimate, so you may need this software to deploy.
-Ensure that the TomCat server is properly configured in order for the web app to deploy. Start your MySQL sever before
-building and running the app. Make sure your MySQL username and password are 'john' and 'pass1234', respectively. Once
-everything is properly configured, go into the 'run' menu in IntelliJ, and click run. The TomCat server should start and
-the project should deploy, opening the application in your default browser.
+1.) Initialize the database by clicking the "Initialize Database" button. This deletes all tables in the database - if they exist. It then creates the tables and populates them. <br>
+
+2.) To assign reviewers to a paper, select a Paper ID from the drop down menu and choose up to three PC Members (using CTRL or CMD). If the PCMember already has 5 reviews assigned to them or the paper already has 3 reviewers, assignment will fail. <br> <br>
+
+## Part 2 Requirements: <br>
+
+1.) To insert, delete or update a paper: Click the 'Insert/Delete/Update a Paper' button on the homepage. A table with the fields PaperID, Title	Abstract, PDF, and the possible actions will appear. To delete a paper, simply click the delete button in the actions column and it will be delete. To update a paper, change the fields you want (except for PaperID which can't be changed) and click update. If you wish to add an entirely new paper, enter the title, abstract, and pdf at the bottom in the empty fields and then click 'Add New Paper'. When you are done, click 'Return to Homepage'. <br>
+
+2.) To insert, delete or update a pc member: Click the 'Insert/Delete/Update a Paper' button on the homepage. A table with the fields MemberID, email, name, and the possible actions will appear. To delete a PC Member, simply click the delete button in the actions column and it will be delete. To update a PC Member, change the fields you want (except for MemberID which can't be changed) and click update. If you wish to add an entirely new PC Member, enter the email and name at the bottom in the empty fields and then click 'Add New PC Member'. When you are done, click 'Return to Homepage'. <br>
+
+3.) To insert, delete, or update a review report: Click the 'Insert/Delete/Update a Review Report' button on the homepage. A table with the fields ReportID, start date, comment, recommendation, paper id, member id, and the possible actions will appear. To delete a review report, simply click the delete button in the actions column and it will be delete. To update a review report, change the fields you want (except for ReportID, PaperID, and MemberID which can't be changed) and click update. If you wish to add an entirely new review report, enter the attributes required at the bottom in the empty fields and then click 'Add New Review'. When you are done, click 'Return to Homepage'. <br>
+
+4.) To list all papers with Fotouhi as the single author: Click 'List all papers with Fotouhi as the single author' on the homepage. The web app will then execute a SQL query to find all the papers with only Fotouhi as their author. <br>
+
+5.) To list all papers with Fotouhi as the first author: Click 'List all papers with Fotouhi as the first author' on the homepage. The web app will then execute a SQL query to find all the papers with Fotouhi as the most significant author. <br>
+
+6.) To list all papers which Fotouhi and Lu have co-authored: Click 'List all papers which Fotouhi and Lu have co-authored' on the homepage. The web app will then execute a SQL query to find all the papers with Fotouhi and Lu as their authors. <br>
+
+7.) To list the PC Member(s) who have reviewed the most papers: Click 'List the PC Member(s) who have reviewed the most papers' on the homepage. The web app will then execute a SQL query to find the PC Member who reviewed the most papers, or members if there is a tie. <br>
+
+8.) To list the PC Members who are not reviewing any papers, Click 'List the PC member(s) who have no reviews assigned to them' on the homepage. The web app will then execute a SQL query to check which PC Members have not been assigned to review any papers. <br>
+
+9.) To list all papers which have been rejected by both Matt and John: Click 'List all papers which have been rejected by both Matt and John' on the homepage. <br>
+
+10.) To view all the accepted papers: Click 'View all accepted papers' at the bottom of the homepage. This will trigger a SQL Query to show all papers which have been accepted by atleast 2 or more PC Members.
 
 
 
