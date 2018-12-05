@@ -26,6 +26,7 @@
       <content id="content">
 
           <div id="beforeInit">
+              <br>
               <!-- This section prompts the user to first initialize the database
                    before they continue to perform any other requests.             -->
               <form action="${pageContext.request.contextPath}/initDB" method="post">
@@ -95,34 +96,44 @@
               <form action="${pageContext.request.contextPath}/updatePaper" method="post">
                   <input type="submit" name="paper" value="Insert/Delete/Update a Paper"/>
               </form>
-              <br>
 
               <!-- This section prompts the user to insert,
                    delete, or update an exiting PC member. -->
               <form action="${pageContext.request.contextPath}/updatePCMember" method="post">
                   <input type="submit" name="pcMember" value="Insert/Delete/Update a PC Member"/>
               </form>
-              <br>
 
               <form action="${pageContext.request.contextPath}/updateReview" method="post">
                   <input type="submit" name="review" value="Insert/Delete/Update a Review Report"/>
               </form>
-              <br>
 
               <form action="${pageContext.request.contextPath}/Fotouhi1.jsp" method="post">
                   <input type="submit" name="Lu1" value="List all papers with Fotouhi as the single author"/>
               </form>
-              <br>
 
               <form action="${pageContext.request.contextPath}/Fotouhi2.jsp" method="post">
                   <input type="submit" name="Lu2" value="List all papers in which Fotouhi is the first author"/>
               </form>
-              <br>
 
               <form action="${pageContext.request.contextPath}/FotouhiLu.jsp" method="post">
                   <input type="submit" name="FotouhiLu" value="List all papers which Fotouhi and Lu have co-authored"/>
               </form>
-              <br>
+
+              <form action="${pageContext.request.contextPath}/mostReviews.jsp" method="post">
+                  <input type="submit" name="mostReviews" value="List the PC member(s) who have reviewed the most papers"/>
+              </form>
+
+              <form action="${pageContext.request.contextPath}/noReviews.jsp" method="post">
+                  <input type="submit" name="noReviews" value="List the PC member(s) who have no reviews assigned to them"/>
+              </form>
+
+              <form action="${pageContext.request.contextPath}/MattJohnReject.jsp" method="post">
+                  <input type="submit" name="MattJohnReject" value="List all papers rejected by both Matt and John"/>
+              </form>
+
+              <form action="${pageContext.request.contextPath}/viewAccepted.jsp" method="post">
+                  <input type="submit" name="viewAccepted" value="View all accepted papers"/>
+              </form>
 
           </div>
 

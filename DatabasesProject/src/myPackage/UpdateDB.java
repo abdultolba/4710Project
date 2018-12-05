@@ -9,7 +9,7 @@ public class UpdateDB {
     public int createConn(String dbName){
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?allowMultiQueries=true&user=root&password=cookiejar");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?allowMultiQueries=true&user=root&password=pass1234");
         } catch (Exception e){
             System.out.print("Error occurred: "+e+"\n");
             return 0;

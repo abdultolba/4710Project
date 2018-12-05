@@ -23,7 +23,7 @@
         <%
             try {
                 String url = "jdbc:mysql://localhost:3306/sampledb";
-                Connection conn = DriverManager.getConnection(url,"root","cookiejar");
+                Connection conn = DriverManager.getConnection(url,"root","pass1234");
                 Statement stmt = conn.createStatement();
                 ResultSet rs;
                 rs = stmt.executeQuery("SELECT * FROM paper WHERE paperid IN (SELECT paperid FROM written WHERE email = (SELECT email FROM author WHERE name = 'Fotouhi') AND significance=1);");
